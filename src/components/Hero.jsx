@@ -76,7 +76,7 @@ const Hero = () => {
                 <div className="container mx-auto flex flex-col md:flex-row justify-between items-end md:items-center gap-6">
                     <div className="w-full md:w-1/3 order-2 md:order-1 hidden md:block">
                         <p className="text-xs md:text-sm font-semibold tracking-wide max-w-[250px] uppercase text-foreground/80 leading-relaxed">
-                            FULL-STACK DEVELOPER · JAVA · SPRING BOOT · REACT · DATABASES AND APIS.
+                            BACKEND DEVELOPER · JAVA · SPRING BOOT · REACT · DATABASES AND APIS.
                         </p>
                     </div>
 

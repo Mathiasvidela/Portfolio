@@ -55,8 +55,8 @@ export const translations = {
                 {
                     school: "ISTEA",
                     degree: "Advanced Technical Diploma in Software Development",
-                    year: "2023 - Present",
-                    description: "Focus on software architecture, algorithms, and full-stack development."
+                    year: "2023 - 2027",
+                    description: "Focus on software architecture, algorithms, and full-stack development with .NET and JAVA."
                 },
                 {
                     school: "Universidad Siglo 21",
@@ -169,8 +169,8 @@ export const translations = {
                 {
                     school: "ISTEA",
                     degree: "Tecnicatura Superior en Desarrollo de Software",
-                    year: "2023 - Presente",
-                    description: "Enfoque en arquitectura de software, algoritmos y desarrollo full-stack."
+                    year: "2025 - 2027",
+                    description: "Enfoque en arquitectura de software, algoritmos y desarrollo full-stack con .NET y Java."
                 },
                 {
                     school: "Universidad Siglo 21",

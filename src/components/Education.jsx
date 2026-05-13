@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { GraduationCap, Award } from 'lucide-react';
+import { GraduationCap, Award, Calendar } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const Education = () => {
@@ -56,27 +56,44 @@ const Education = () => {
                     </motion.h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-32">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-20">
                     {t.education.items.map((edu, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="p-8 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 backdrop-blur-sm transition-colors"
+                            className="relative flex items-stretch bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 w-full"
                         >
-                            <div className="flex items-start justify-between mb-4">
-                                <div>
-                                    <h3 className="text-xl font-bold text-white mb-1">{edu.school}</h3>
-                                    <p className="text-blue-100 text-sm font-medium">{edu.degree}</p>
-                                </div>
-                                <GraduationCap className="text-white/60" size={24} />
+                            {/* Left colored bar */}
+                            <div className="w-16 md:w-24 shrink-0 bg-[#0e2db5] relative overflow-hidden">
+                                <div className="absolute -right-8 -top-8 w-24 h-24 border border-white/20 rounded-full" />
+                                <div className="absolute -left-8 -bottom-8 w-32 h-32 border border-white/20 rounded-full" />
                             </div>
-                            <p className="text-white/50 text-sm mb-4">{edu.year}</p>
-                            <p className="text-white/80 leading-relaxed font-light">
-                                {edu.description}
-                            </p>
+
+                            {/* Floating Icon Box */}
+                            <div className="absolute left-10 md:left-16 top-1/2 -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 bg-[#133df6] rounded-xl flex items-center justify-center shadow-md border-[3px] md:border-4 border-white z-10">
+                                <GraduationCap className="text-white w-5 h-5 md:w-7 md:h-7" />
+                            </div>
+
+                            {/* Content */}
+                            <div className="py-6 pr-6 md:py-8 md:pr-8 pl-10 md:pl-12 flex-1 flex flex-col justify-center">
+                                <span className="text-gray-500 font-semibold text-xs md:text-sm uppercase tracking-wider mb-1">{edu.school}</span>
+                                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 leading-tight">{edu.degree}</h3>
+
+                                <div className="flex flex-wrap gap-3 items-center mt-2">
+                                    <div className="flex items-center gap-1.5 text-[#133df6] font-semibold text-xs md:text-sm bg-blue-50 px-3 py-1.5 rounded-lg border border-blue-100">
+                                        <Calendar size={14} />
+                                        <span>{edu.year}</span>
+                                    </div>
+                                </div>
+                                {edu.description && (
+                                    <p className="text-gray-600 text-sm mt-4 font-normal leading-relaxed">
+                                        {edu.description}
+                                    </p>
+                                )}
+                            </div>
                         </motion.div>
                     ))}
                 </div>
@@ -91,7 +108,7 @@ const Education = () => {
                     {t.education.courses.title}
                 </motion.h3>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-[1400px] mx-auto px-2">
                     {t.education.courses.items.map((course, index) => (
                         <motion.div
                             key={index}
@@ -99,20 +116,29 @@ const Education = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.4, delay: index * 0.1 }}
-                            className="p-6 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 backdrop-blur-sm transition-colors group"
+                            className="relative flex items-stretch bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 w-full min-h-[120px]"
                         >
-                            <div className="flex items-center justify-between mb-4">
-                                <Award className="text-yellow-400" size={20} />
-                                <span className="text-xs font-medium text-white/60 bg-white/5 border border-white/10 px-2 py-1 rounded-full">
-                                    {course.year}
-                                </span>
+                            {/* Left colored bar */}
+                            <div className="w-8 md:w-10 shrink-0 bg-[#0e2db5] relative overflow-hidden">
+                                <div className="absolute -right-4 -top-4 w-12 h-12 border border-white/20 rounded-full" />
+                                <div className="absolute -left-4 -bottom-4 w-16 h-16 border border-white/20 rounded-full" />
                             </div>
-                            <h4 className="text-base font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors line-clamp-2">
-                                {course.title}
-                            </h4>
-                            <p className="text-sm text-white/60 font-light">
-                                {course.institution}
-                            </p>
+
+                            {/* Floating Icon Box */}
+                            <div className="absolute left-4 md:left-5 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 bg-[#133df6] rounded-xl flex items-center justify-center shadow-md border-[2px] md:border-[3px] border-white z-10">
+                                <Award className="text-white w-3 h-3 md:w-4 md:h-4" />
+                            </div>
+
+                            {/* Content */}
+                            <div className="py-4 pr-4 pl-6 md:pl-7 flex-1 flex flex-col justify-center">
+                                <span className="text-gray-500 font-semibold text-[10px] md:text-xs uppercase tracking-wider mb-1 line-clamp-1">{course.institution}</span>
+                                <h4 className="text-sm md:text-base font-bold text-gray-900 mb-2 leading-tight line-clamp-2">{course.title}</h4>
+
+                                <div className="flex items-center gap-1 text-[#133df6] font-semibold text-[10px] bg-blue-50 px-2 py-0.5 rounded border border-blue-100 w-fit">
+                                    <Calendar size={10} />
+                                    <span>{course.year}</span>
+                                </div>
+                            </div>
                         </motion.div>
                     ))}
                 </div>
