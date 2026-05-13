@@ -80,7 +80,7 @@ const Experience = () => {
 
     return (
         <section id="projects" className="py-24 bg-background overflow-hidden">
-            <div className="container mx-auto px-6 max-w-7xl">
+            <div className="container mx-auto px-6 md:px-12 max-w-7xl">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

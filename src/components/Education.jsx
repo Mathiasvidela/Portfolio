@@ -33,18 +33,9 @@ const Education = () => {
                 ING
             </div>
 
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="container mx-auto px-6 md:px-12 relative z-10">
                 {/* Education Section */}
                 <div className="flex flex-col items-center justify-center mb-16">
-                    {/* <div className="flex items-center gap-6 mb-6 w-full max-w-xl justify-center">
-                        <div className="h-[1px] w-12 bg-white/20 relative">
-                            <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-yellow-400"></div>
-                        </div>
-                        <span className="text-yellow-400 font-bold text-xs tracking-[0.2em] uppercase whitespace-nowrap">03 / EDUCATION</span>
-                        <div className="h-[1px] w-12 bg-white/20 relative">
-                            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-yellow-400"></div>
-                        </div>
-                    </div> */}
 
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
@@ -56,7 +47,7 @@ const Education = () => {
                     </motion.h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-20">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full justify-between mb-20">
                     {t.education.items.map((edu, index) => (
                         <motion.div
                             key={index}
@@ -108,7 +99,7 @@ const Education = () => {
                     {t.education.courses.title}
                 </motion.h3>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-[1400px] mx-auto px-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full mx-auto">
                     {t.education.courses.items.map((course, index) => (
                         <motion.div
                             key={index}

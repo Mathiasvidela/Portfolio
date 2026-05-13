@@ -34,7 +34,7 @@ const Contact = () => {
                 <div className="absolute top-1/4 right-1/4 w-80 h-80 bg-[#133df6]/20 rounded-full blur-[100px]" />
             </div>
 
-            <div className="container mx-auto px-6 max-w-7xl relative z-10">
+            <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
                 <div className="flex flex-col xl:flex-row gap-16 xl:gap-8 items-center xl:items-start">
 
                     {/* Left Side: Text content */}

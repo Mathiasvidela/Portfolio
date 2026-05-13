@@ -43,7 +43,7 @@ const TechStack = () => {
 
     return (
         <section id="tech" className="py-24 bg-muted/30 relative overflow-hidden">
-            <div className="container mx-auto px-6 text-center">
+            <div className="container mx-auto px-6 md:px-12 text-center">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

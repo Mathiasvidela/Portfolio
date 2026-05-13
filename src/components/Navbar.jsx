@@ -37,7 +37,7 @@ const Navbar = () => {
                     : 'bg-transparent py-6'
             )}
         >
-            <div className="container mx-auto px-6 flex justify-between items-center">
+            <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
                 <a href="#" className="text-2xl font-heading font-bold tracking-tighter text-foreground">
                     MV<span className="text-primary">.</span>
                 </a>

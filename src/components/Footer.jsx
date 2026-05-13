@@ -6,7 +6,7 @@ const Footer = () => {
 
     return (
         <footer className="bg-muted/30 py-12 border-t border-foreground/10">
-            <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+            <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center">
                 <div className="mb-6 md:mb-0">
                     <p className="text-2xl font-heading font-bold tracking-tighter text-foreground mb-2">
                         MV<span className="text-primary">.</span>
