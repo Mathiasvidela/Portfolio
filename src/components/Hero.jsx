@@ -52,7 +52,10 @@ const Hero = () => {
 
             {/* Photo Overlapping text */}
             <div className="absolute bottom-0 w-full flex justify-center pointer-events-none z-20">
-                <img
+                <motion.img
+                    initial={{ y: "100%", opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
                     src="/fotobn.png"
                     alt="Developer"
                     className="max-h-[75vh] md:max-h-[85vh] object-contain object-bottom drop-shadow-2xl"
