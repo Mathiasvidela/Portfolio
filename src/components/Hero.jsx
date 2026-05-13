@@ -1,82 +1,97 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, MousePointer2 } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
 const Hero = () => {
     const { t } = useLanguage();
+    const fullText = "SOFTWARE\nDEVELOPER";
+    const [text, setText] = useState("");
+
+    const scrollToContact = () => {
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    useEffect(() => {
+        let i = 0;
+        const typingInterval = setInterval(() => {
+            if (i < fullText.length) {
+                setText(fullText.substring(0, i + 1));
+                i++;
+            } else {
+                clearInterval(typingInterval);
+            }
+        }, 150); // Speed of typing
+
+        return () => clearInterval(typingInterval);
+    }, []);
 
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background pt-20">
-            {/* Background Gradient Blob */}
-            <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] opacity-50 animate-pulse" />
-            <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-accent/20 rounded-full blur-[120px] opacity-50 animate-pulse delay-1000" />
-
-            <div className="container mx-auto px-6 relative z-10 text-center">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                >
-                    <span className="inline-block py-1 px-3 rounded-full bg-foreground/5 border border-foreground/10 text-sm text-muted-foreground mb-6 backdrop-blur-sm">
-                        {t.hero.available}
-                    </span>
-
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold tracking-tighter text-foreground mb-6 leading-tight">
-                        {t.hero.titlePart1} <br className="hidden md:block" />
-                        {t.hero.titlePart2} <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">{t.hero.titlePart3}</span>.
-                    </h1>
-
-                    <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-                        {t.hero.description}
-                    </p>
-
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <a
-                            href="#projects"
-                            className="group relative px-8 py-4 bg-foreground text-background font-bold rounded-full overflow-hidden transition-transform hover:scale-105 active:scale-95"
-                        >
-                            <span className="relative z-10 flex items-center gap-2">
-                                {t.hero.viewProjects} <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                            </span>
-                            <div className="absolute inset-0 bg-gradient-to-r from-gray-100 to-gray-300 opacity-0 group-hover:opacity-100 transition-opacity" />
-                        </a>
-
-                        <a
-                            href="#contact"
-                            className="px-8 py-4 bg-transparent border border-foreground/20 text-foreground font-medium rounded-full hover:bg-foreground/5 transition-colors backdrop-blur-sm"
-                        >
-                            {t.hero.contactMe}
-                        </a>
-                    </div>
-                </motion.div>
+            {/* Background Text */}
+            <div className="absolute inset-0 flex flex-col justify-center items-center pointer-events-none select-none z-0 mt-10 md:mt-0">
+                <h1 className="text-[14vw] md:text-[13vw] font-black leading-[0.8] text-[#133df6] tracking-tighter w-full text-center whitespace-pre-wrap">
+                    {text}
+                    <motion.span
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ repeat: Infinity, duration: 0.8, repeatType: "reverse" }}
+                        className="inline-block w-[1.5vw] md:w-[1vw] h-[10vw] md:h-[9vw] bg-[#133df6] ml-2 align-bottom"
+                    />
+                </h1>
             </div>
 
-            {/* Floating Elements (Antigravity) */}
-            <motion.div
-                animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-1/4 left-[10%] hidden lg:block opacity-20"
-            >
-                <div className="w-24 h-24 border border-foreground rounded-2xl transform rotate-12" />
-            </motion.div>
+            {/* Small floating text overlays */}
+            <div className="absolute inset-0 z-10 pointer-events-none">
+                <div className="absolute top-[20%] md:top-[25%] left-[40%] md:left-[16%]">
+                    <span className="font-serif italic text-4xl md:text-6xl text-foreground/90">I'm a</span>
+                </div>
+            </div>
 
-            <motion.div
-                animate={{ y: [0, 30, 0], rotate: [0, -10, 0] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute bottom-1/3 right-[10%] hidden lg:block opacity-20"
-            >
-                <div className="w-32 h-32 border border-primary rounded-full" />
-            </motion.div>
+            {/* Photo Overlapping text */}
+            <div className="absolute bottom-0 w-full flex justify-center pointer-events-none z-20">
+                <img
+                    src="/fotobn.png"
+                    alt="Developer"
+                    className="max-h-[75vh] md:max-h-[85vh] object-contain object-bottom drop-shadow-2xl"
+                />
+            </div>
 
-            {/* Scroll Indicator */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1, y: [0, 10, 0] }}
-                transition={{ delay: 2, duration: 2, repeat: Infinity }}
-                className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-muted-foreground"
-            >
-                <MousePointer2 size={24} />
-            </motion.div>
+            {/* textura fondo */}
+            <div className="absolute top-0 w-full h-full bg-[url('/texture_background.png')] opacity-20 pointer-events-none">
+                <img
+                    src="/texture_dust.webp"
+                    alt="Texture Background"
+                    className="w-full h-[120vh] md:max-h-[120vh] object-cover opacity-60"
+                />
+            </div>
+
+            {/* Bottom Footer Section */}
+            <div className="absolute bottom-8 w-full z-30 px-6 md:px-12">
+                <div className="container mx-auto flex flex-col md:flex-row justify-between items-end md:items-center gap-6">
+                    <div className="w-full md:w-1/3 order-2 md:order-1 hidden md:block">
+                        <p className="text-xs md:text-sm font-semibold tracking-wide max-w-[250px] uppercase text-foreground/80 leading-relaxed">
+                            FULL-STACK DEVELOPER · JAVA · SPRING BOOT · REACT · DATABASES AND APIS.
+                        </p>
+                    </div>
+
+                    <div className="w-full md:w-1/3 flex justify-center order-1 md:order-2">
+                        <button
+                            onClick={scrollToContact}
+                            className="px-8 md:px-12 py-4 bg-[#133df6] text-white rounded-lg font-bold tracking-wide uppercase hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl w-full md:w-auto" >
+                            {t.hero.LetsBuild}
+                        </button>
+                    </div>
+
+                    <div className="w-full md:w-1/3 flex justify-end order-3 md:order-3 hidden md:flex">
+                        <p className="text-xs md:text-sm text-foreground/60 max-w-[250px] leading-relaxed">
+                            I build digital solutions designed to scale, stay maintainable, and improve the user experience.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
     );
 };

@@ -1,15 +1,13 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Globe, Sun, Moon } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { useLanguage } from '../context/LanguageContext';
-import { useTheme } from '../context/ThemeContext';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const { t, language, setLanguage } = useLanguage();
-    const { theme, toggleTheme } = useTheme();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -58,14 +56,6 @@ const Navbar = () => {
 
                     <div className="flex items-center gap-2 border-l border-foreground/10 pl-6">
                         <button
-                            onClick={toggleTheme}
-                            className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-full hover:bg-foreground/5"
-                            aria-label="Toggle theme"
-                        >
-                            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
-                        </button>
-
-                        <button
                             onClick={toggleLanguage}
                             className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-full hover:bg-foreground/5"
                         >
@@ -76,7 +66,7 @@ const Navbar = () => {
 
                     <a
                         href="/resume.pdf"
-                        className="px-4 py-2 text-sm font-medium text-background bg-foreground rounded-full hover:bg-foreground/90 transition-colors"
+                        className="px-4 py-2 text-sm font-medium text-background bg-foreground rounded-lg hover:bg-foreground/90 transition-colors"
                     >
                         {t.nav.resume}
                     </a>
@@ -84,13 +74,6 @@ const Navbar = () => {
 
                 {/* Mobile Menu Button */}
                 <div className="md:hidden flex items-center gap-4">
-                    <button
-                        onClick={toggleTheme}
-                        className="p-2 text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                        {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
-                    </button>
-
                     <button
                         onClick={toggleLanguage}
                         className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
@@ -129,7 +112,7 @@ const Navbar = () => {
                             ))}
                             <a
                                 href="/resume.pdf"
-                                className="inline-block text-center px-4 py-2 text-sm font-medium text-background bg-foreground rounded-full hover:bg-foreground/90 transition-colors"
+                                className="inline-block text-center px-4 py-2 text-sm font-medium text-background bg-foreground rounded-lg hover:bg-foreground/90 transition-colors"
                             >
                                 {t.nav.downloadResume}
                             </a>

@@ -9,34 +9,12 @@ export const translations = {
             downloadResume: 'Download Resume'
         },
         hero: {
-            available: 'Available for Full-stack & Software Development',
-            titlePart1: 'Digital architecture',
-            titlePart2: 'for',
-            titlePart3: 'real-world challenges',
-            description: "I'm Mathias Laureano Videla, a Software Developer specializing in building robust, high-performance applications. I bridge the gap between complex backend logic and intuitive user experiences.",
-            viewProjects: 'View Projects',
-            contactMe: 'Contact Me'
+            LetsBuild: "Let's Connect"
         },
         about: {
-            titlePart1: 'Building the future with',
-            titlePart2: 'Code',
-            titlePart3: 'and',
-            titlePart4: 'Architecture',
-            description: 'My passion lies in solving complex problems through clean, efficient code. Whether it\'s designing microservices in Java, building interactive UIs with React, or optimizing database queries, I focus on scalability and performance.',
-            features: [
-                {
-                    title: "Software Engineer",
-                    description: "Developing reliable backend systems and APIs using Java, C#, and Node.js with a focus on clean architecture."
-                },
-                {
-                    title: "Full Stack Developer",
-                    description: "Creating end-to-end solutions, seamlessly integrating frontend interfaces with powerful backend services."
-                },
-                {
-                    title: "Continuous Learner",
-                    description: "Constantly exploring new technologies and best practices to deliver cutting-edge software solutions."
-                }
-            ]
+            titlePart1: 'Building the future',
+            titlePart2: 'with Code and Architecture.',
+            description: 'My focus is on backend development with Java and Spring Boot, working on APIs, data persistence, business logic, and application architecture. I aim to write clean code, apply best practices, and build systems that are easy to maintain and scale.',
         },
         tech: {
             title: 'My Tech Stack'
@@ -45,28 +23,29 @@ export const translations = {
             title: 'Featured Work',
             projects: [
                 {
-                    title: 'NeonBank',
-                    description: 'A futuristic fintech dashboard with real-time data visualization and crypto tracking.',
-                    role: 'Frontend Architecture',
-                    tech: ['React', 'TypeScript', 'Chart.js', 'Tailwind']
+                    title: 'Stubify 🚧 (WIP)',
+                    description: 'Application to create personalized digital tickets from important memories, incorporating photos, dates, locations, titles, and descriptions to save or share them.',
+                    role: 'Full Stack Web App',
+                    tech: ['Java', 'Spring Boot', 'React', 'Vite'],
+                    github: 'https://github.com/Mathiasvidela/stubify',
+                    url: 'https://stubify.app',
+                    image: '/Stubify.jpg'
                 },
                 {
-                    title: 'AeroStream',
-                    description: 'High-performance video streaming platform with adaptive bitrate and social features.',
-                    role: 'UI/UX & Development',
-                    tech: ['Next.js', 'WebRTC', 'Framer Motion', 'Node.js']
+                    title: 'User & Product Management API 🚧 (WIP)',
+                    description: 'RESTful API developed with Spring Boot to manage users, products, and categories, applying layered architecture, CRUD operations, and MySQL integration via Spring Data JPA.',
+                    role: 'Java Backend',
+                    tech: ['Java', 'Spring Boot', 'MySQL', 'JPA'],
+                    github: 'https://github.com/Mathiasvidela/API-REST-Gestion',
+                    image: '/apirest.jpg'
                 },
                 {
-                    title: 'CyberMarket',
-                    description: 'Next-gen e-commerce experience with 3D product previews and seamless checkout.',
-                    role: 'Full Stack Developer',
-                    tech: ['React', 'Three.js', 'Stripe', 'Zustand']
-                },
-                {
-                    title: 'ZenTask',
-                    description: 'Minimalist productivity tool for remote teams with real-time collaboration.',
-                    role: 'Product Designer',
-                    tech: ['React', 'Firebase', 'Tailwind', 'Radix UI']
+                    title: 'Coworking System',
+                    description: 'Coworking management system developed in Java with a Swing interface and JPA persistence, designed to manage members, workspaces, and reservations.',
+                    role: 'Desktop Application',
+                    tech: ['Java', 'Swing', 'JPA', 'MySQL'],
+                    github: 'https://github.com/Mathiasvidela/coworking-system',
+                    image: '/coworking.jpg'
                 }
             ]
         },
@@ -75,7 +54,7 @@ export const translations = {
             items: [
                 {
                     school: "ISTEA",
-                    degree: "Tecnicatura Superior en Desarrollo de Software",
+                    degree: "Advanced Technical Diploma in Software Development",
                     year: "2023 - Present",
                     description: "Focus on software architecture, algorithms, and full-stack development."
                 },
@@ -100,21 +79,28 @@ export const translations = {
                         year: "2023"
                     },
                     {
-                        title: "Advanced React Patterns",
-                        institution: "Udemy",
-                        year: "2024"
+                        title: "Web development",
+                        institution: "Coderhouse",
+                        year: "2021"
                     },
                     {
-                        title: "Backend Architecture with Node.js",
-                        institution: "Coursera",
-                        year: "2024"
+                        title: "Object-Oriented Programming with Java",
+                        institution: "TodoCode",
+                        year: "2026"
                     }
                 ]
             }
         },
         contact: {
-            title: "Let's work together.",
-            description: "Have a project in mind or just want to say hi? I'm always open to discussing new opportunities and ideas.",
+            title: "Let's Connect",
+            description: "I'm open to new software development opportunities. If you want to know more about my profile, you can write to me or check my experience.",
+            availability: "Available for Jr, Trainee or Full-stack positions • Remote / Hybrid • Argentina",
+            email: "Email",
+            emailDesc: "Write me directly",
+            linkedin: "LinkedIn",
+            linkedinDesc: "View professional profile",
+            cv: "Resume",
+            cvDesc: "Download resume",
             nameLabel: 'Name',
             namePlaceholder: 'Your Name',
             emailLabel: 'Email',
@@ -137,34 +123,12 @@ export const translations = {
             downloadResume: 'Descargar CV'
         },
         hero: {
-            available: 'Disponible para Desarrollo de Software y Full-stack',
-            titlePart1: 'Arquitectura',
-            titlePart2: 'digital para',
-            titlePart3: 'desafíos reales',
-            description: "Soy Mathias Laureano Videla, un Desarrollador de Software especializado en construir aplicaciones robustas y de alto rendimiento. Uno la lógica compleja del backend con experiencias de usuario intuitivas.",
-            viewProjects: 'Ver Proyectos',
-            contactMe: 'Contactame'
+            LetsBuild: "Conectemos"
         },
         about: {
-            titlePart1: 'Construyendo el futuro con',
-            titlePart2: 'Código',
-            titlePart3: 'y',
-            titlePart4: 'Arquitectura',
-            description: 'Mi pasión reside en resolver problemas complejos a través de código limpio y eficiente. Ya sea diseñando microservicios en Java, construyendo interfaces interactivas con React u optimizando consultas de bases de datos, me enfoco en la escalabilidad y el rendimiento.',
-            features: [
-                {
-                    title: "Ingeniero de Software",
-                    description: "Desarrollando sistemas backend confiables y APIs usando Java, C# y Node.js con un enfoque en arquitectura limpia."
-                },
-                {
-                    title: "Desarrollador Full Stack",
-                    description: "Creando soluciones de extremo a extremo, integrando perfectamente interfaces frontend con potentes servicios backend."
-                },
-                {
-                    title: "Aprendizaje Continuo",
-                    description: "Explorando constantemente nuevas tecnologías y mejores prácticas para entregar soluciones de software de vanguardia."
-                }
-            ]
+            titlePart1: 'Construyendo el futuro',
+            titlePart2: 'con Código y Arquitectura.',
+            description: 'Mi enfoque está en el desarrollo backend con Java y Spring Boot, trabajando sobre APIs, persistencia de datos, lógica de negocio y arquitectura de aplicaciones. Busco escribir código claro, aplicar buenas prácticas y construir sistemas que sean fáciles de mantener y escalar.',
         },
         tech: {
             title: 'Mi Stack Tecnológico'
@@ -173,28 +137,29 @@ export const translations = {
             title: 'Trabajos Destacados',
             projects: [
                 {
-                    title: 'Zhen Phone',
-                    description: 'Ecommerce completo, con un catálogo dinámico de productos y un carrito de compras funcional. Todo desarrollado desde cero sin frameworks, usando solo HTML, CSS y JavaScript.',
-                    role: 'Arquitectura Frontend',
-                    tech: ['HTML', 'CSS', 'JavaScript']
+                    title: 'Stubify 🚧 (WIP)',
+                    description: 'Aplicación para crear tickets digitales personalizados a partir de recuerdos importantes, incorporando foto, fecha, ubicación, título y descripción para guardarlos o compartirlos.',
+                    role: 'App Web Full Stack',
+                    tech: ['Java', 'Spring Boot', 'React', 'Vite'],
+                    github: 'https://github.com/Mathiasvidela/stubify',
+                    url: 'https://stubify.app',
+                    image: '/Stubify.jpg'
                 },
                 {
-                    title: 'Raul Brusa Group | Web institucional',
-                    description: 'Web institucional con un diseño moderno y responsive.',
-                    role: 'UI/UX y Desarrollo',
-                    tech: ['JavaScript', 'HTML', 'TailwindCSS']
+                    title: 'API de Gestión de Usuarios y Productos 🚧 (WIP)',
+                    description: 'API REST desarrollada con Spring Boot para administrar usuarios, productos y categorías, aplicando arquitectura en capas, operaciones CRUD e integración con MySQL mediante Spring Data JPA.',
+                    role: 'Backend Java',
+                    tech: ['Java', 'Spring Boot', 'MySQL', 'JPA'],
+                    github: 'https://github.com/Mathiasvidela/User-Product-API',
+                    image: '/apirest.jpg'
                 },
                 {
-                    title: 'CyberMarket',
-                    description: 'Experiencia de e-commerce de próxima generación con vistas de productos en 3D y pago fluido.',
-                    role: 'Desarrollador Full Stack',
-                    tech: ['React', 'Three.js', 'Stripe', 'Zustand']
-                },
-                {
-                    title: 'ZenTask',
-                    description: 'Herramienta de productividad minimalista para equipos remotos con colaboración en tiempo real.',
-                    role: 'Diseñador de Producto',
-                    tech: ['React', 'Firebase', 'Tailwind', 'Radix UI']
+                    title: 'Coworking System',
+                    description: 'Sistema de gestión para coworking desarrollado en Java, con interfaz Swing y persistencia JPA, orientado a administrar miembros, espacios de trabajo y reservas.',
+                    role: 'Aplicación Desktop',
+                    tech: ['Java', 'Swing', 'JPA', 'MySQL'],
+                    github: 'https://github.com/Mathiasvidela/coworking-system',
+                    image: '/coworking.jpg'
                 }
             ]
         },
@@ -233,23 +198,23 @@ export const translations = {
                         year: "2021"
                     },
                     {
-                        title: "Diseño UX/UI",
-                        institution: "Coderhouse",
-                        year: "2021"
+                        title: "Programación Orientada a Objetos con Java",
+                        institution: "TodoCode",
+                        year: "2026"
                     }
                 ]
             }
         },
         contact: {
-            title: "Trabajemos juntos.",
-            description: "¿Tienes un proyecto en mente o solo quieres saludar? Siempre estoy abierto a discutir nuevas oportunidades e ideas.",
-            nameLabel: 'Nombre',
-            namePlaceholder: 'Tu Nombre',
-            emailLabel: 'Email',
-            emailPlaceholder: 'tu@email.com',
-            messageLabel: 'Mensaje',
-            messagePlaceholder: 'Cuéntame sobre tu proyecto...',
-            sendButton: 'Enviar Mensaje'
+            title: "Conectemos",
+            description: "Estoy abierto a nuevas oportunidades en desarrollo de software. Si querés conocer más sobre mi perfil, podés escribirme o revisar mi experiencia.",
+            availability: "Disponible para posiciones Jr, Trainee • Remoto / Híbrido • Latinoamérica / Unión Europea",
+            email: "Email",
+            emailDesc: "Escribime directamente",
+            linkedin: "LinkedIn",
+            linkedinDesc: "Ver perfil profesional",
+            cv: "CV",
+            cvDesc: "Descargar currículum"
         },
         footer: {
             rights: 'Todos los derechos reservados.'
