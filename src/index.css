@@ -24,11 +24,10 @@
   
   html {
     scroll-behavior: smooth;
-    cursor: none;
   }
 
   a, button, input, textarea {
-    cursor: none;
+    /* browser defaults will apply automatically */
   }
 }
 
