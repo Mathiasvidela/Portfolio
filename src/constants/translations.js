@@ -143,7 +143,7 @@ export const translations = {
                     tech: ['Java', 'Spring Boot', 'React', 'Vite'],
                     github: 'https://github.com/Mathiasvidela/stubify',
                     url: 'https://stubify.app',
-                    image: '/Stubify.jpg'
+                    image: '/stubify.webp'
                 },
                 {
                     title: 'API de Gestión de Usuarios y Productos 🚧 (WIP)',
@@ -151,7 +151,7 @@ export const translations = {
                     role: 'Backend Java',
                     tech: ['Java', 'Spring Boot', 'MySQL', 'JPA'],
                     github: 'https://github.com/Mathiasvidela/User-Product-API',
-                    image: '/apirest.jpg'
+                    image: '/apirest.webp'
                 },
                 {
                     title: 'Coworking System',
@@ -159,7 +159,7 @@ export const translations = {
                     role: 'Aplicación Desktop',
                     tech: ['Java', 'Swing', 'JPA', 'MySQL'],
                     github: 'https://github.com/Mathiasvidela/coworking-system',
-                    image: '/coworking.jpg'
+                    image: '/coworking.webp'
                 }
             ]
         },

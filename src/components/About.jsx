@@ -41,10 +41,29 @@ const About = () => {
             <div className="container mx-auto px-6 md:px-12 relative z-10 w-full">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
 
-                    {/* Left space with Spline iframe */}
-                    <div className="lg:col-span-4 xl:col-span-5 relative z-50 h-[300px] lg:h-auto lg:min-h-[500px] w-full">
-                        <iframe src="https://my.spline.design/pixeltextsetcopycopy-8D4smM00SB6ZDOHlO8NbkuF1-Yew/" frameBorder="0" className="absolute inset-0 w-full h-full bg-transparent" allowTransparency="true" style={{ background: 'transparent' }}></iframe>
-
+                    {/* Left space with User's Terminal Image */}
+                    <div className="lg:col-span-4 xl:col-span-5 relative z-50 flex items-center justify-center w-full">
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.96 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, ease: "easeOut" }}
+                            className="w-full flex justify-center"
+                        >
+                            <motion.img
+                                src="/imagecmd.webp"
+                                alt="Command Terminal Interface"
+                                className="w-full max-w-[420px] h-auto object-contain rounded-lg"
+                                animate={{
+                                    y: [0, -12, 0]
+                                }}
+                                transition={{
+                                    duration: 3.5,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }}
+                            />
+                        </motion.div>
                     </div>
 
 
@@ -57,13 +76,7 @@ const About = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            {/* Header */}
-                            {/* <div className="flex items-center gap-6 mb-10 w-full max-w-xl">
-                                <span className="text-yellow-400 font-bold text-xs tracking-[0.2em] uppercase whitespace-nowrap">01 / ABOUT</span>
-                                <div className="h-[1px] flex-grow bg-white/20 relative">
-                                    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-yellow-400"></div>
-                                </div>
-                            </div> */}
+
 
                             {/* Main Content */}
                             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-[1.1] tracking-tight">
@@ -75,45 +88,6 @@ const About = () => {
                                 {t.about.description}
                             </p>
                         </motion.div>
-
-                        {/* 3 Cards / Items */}
-                        {/* <motion.div 
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
-                            className="grid grid-cols-1 sm:grid-cols-3 gap-0 border border-white/10 rounded-sm bg-[#133df6]/50 backdrop-blur-sm"
-                        >
-                            {/* Item 1 */}
-                        {/* <div className="p-6 md:p-8 border-b sm:border-b-0 sm:border-r border-white/10 hover:bg-white/5 transition-colors">
-                                <div className="flex justify-between items-center mb-6">
-                                    <span className="text-white font-bold text-lg">01</span>
-                                    <div className="w-1.5 h-1.5 rounded-full bg-yellow-400"></div>
-                                </div>
-                                <h3 className="text-white font-bold text-lg md:text-xl mb-3">Java & Spring Boot</h3>
-                                <p className="text-white/60 text-xs md:text-sm font-light leading-relaxed">Microservicios robustos y escalables.</p>
-                            </div> */}
-
-                        {/* Item 2 */}
-                        {/* <div className="p-6 md:p-8 border-b sm:border-b-0 sm:border-r border-white/10 hover:bg-white/5 transition-colors">
-                                <div className="flex justify-between items-center mb-6">
-                                    <span className="text-white font-bold text-lg">02</span>
-                                    <div className="w-1.5 h-1.5 rounded-full bg-yellow-400"></div>
-                                </div>
-                                <h3 className="text-white font-bold text-lg md:text-xl mb-3">React Interfaces</h3>
-                                <p className="text-white/60 text-xs md:text-sm font-light leading-relaxed">Interfaces interactivas y performantes.</p>
-                            </div> */}
-
-                        {/* Item 3 */}
-                        {/* <div className="p-6 md:p-8 hover:bg-white/5 transition-colors">
-                                <div className="flex justify-between items-center mb-6">
-                                    <span className="text-white font-bold text-lg">03</span>
-                                    <div className="w-1.5 h-1.5 rounded-full bg-yellow-400"></div>
-                                </div>
-                                <h3 className="text-white font-bold text-lg md:text-xl mb-3">SQL Optimization</h3>
-                                <p className="text-white/60 text-xs md:text-sm font-light leading-relaxed">Consultas eficientes, datos que rinden.</p>
-                            </div>
-                        </motion.div> */}
 
                     </div>
                 </div>

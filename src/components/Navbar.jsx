@@ -57,6 +57,7 @@ const Navbar = () => {
                     <div className="flex items-center gap-2 border-l border-foreground/10 pl-6">
                         <button
                             onClick={toggleLanguage}
+                            aria-label="Toggle language"
                             className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-full hover:bg-foreground/5"
                         >
                             <Globe size={18} />
@@ -76,6 +77,7 @@ const Navbar = () => {
                 <div className="md:hidden flex items-center gap-4">
                     <button
                         onClick={toggleLanguage}
+                        aria-label="Toggle language"
                         className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
                     >
                         <span className="uppercase">{language}</span>
@@ -84,6 +86,8 @@ const Navbar = () => {
                     <button
                         className="text-foreground"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+                        aria-expanded={isMobileMenuOpen}
                     >
                         {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>

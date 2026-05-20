@@ -17,13 +17,13 @@ const Footer = () => {
                 </div>
 
                 <div className="flex space-x-6">
-                    <a href="https://www.github.com/Mathiasvidela" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+                    <a href="https://www.github.com/Mathiasvidela" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" className="text-muted-foreground hover:text-foreground transition-colors">
                         <Github size={20} />
                     </a>
-                    <a href="www.linkedin.com/in/mathias-videla/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+                    <a href="https://www.linkedin.com/in/mathias-videla/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" className="text-muted-foreground hover:text-foreground transition-colors">
                         <Linkedin size={20} />
                     </a>
-                    <a href="mailto:mathiasvidela20@gmail.com" className="text-muted-foreground hover:text-foreground transition-colors">
+                    <a href="mailto:mathiasvidela20@gmail.com" aria-label="Send Email" className="text-muted-foreground hover:text-foreground transition-colors">
                         <Mail size={20} />
                     </a>
                 </div>

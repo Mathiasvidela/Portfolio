@@ -57,19 +57,23 @@ const Hero = () => {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
                     src="/fotobn.png"
-                    alt="Developer"
+                    alt="Developer portrait"
+                    fetchPriority="high"
+                    loading="eager"
                     className="max-h-[75vh] md:max-h-[85vh] object-contain object-bottom drop-shadow-2xl"
                 />
             </div>
 
-            {/* textura fondo */}
-            <div className="absolute top-0 w-full h-full bg-[url('/texture_background.png')] opacity-20 pointer-events-none">
-                <img
-                    src="/texture_dust.webp"
-                    alt="Texture Background"
-                    className="w-full h-[120vh] md:max-h-[120vh] object-cover opacity-60"
-                />
-            </div>
+            {/* CSS Radial Dot Grid (Instant 0KB load time) */}
+            <div 
+                className="absolute inset-0 pointer-events-none opacity-25 z-0" 
+                style={{
+                    backgroundImage: 'radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1.5px)',
+                    backgroundSize: '28px 28px',
+                    maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 80%)',
+                    WebkitMaskImage: 'radial-gradient(ellipse at center, black 40%, transparent 80%)',
+                }}
+            />
 
             {/* Bottom Footer Section */}
             <div className="absolute bottom-8 w-full z-30 px-6 md:px-12">
