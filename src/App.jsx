@@ -9,12 +9,10 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 import { LanguageProvider } from './context/LanguageContext';
-import CustomCursor from './components/CustomCursor';
 
 function App() {
   return (
     <LanguageProvider>
-      <CustomCursor />
       <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/30 selection:text-white">
         <Navbar />
         <main>
