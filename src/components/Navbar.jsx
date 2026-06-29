@@ -66,7 +66,8 @@ const Navbar = () => {
                     </div>
 
                     <a
-                        href="/resume.pdf"
+                        href="/resume/CV-Mathias-Videla.pdf"
+                        download="CV_Mathias_Videla.pdf"
                         className="px-4 py-2 text-sm font-medium text-background bg-foreground rounded-lg hover:bg-foreground/90 transition-colors"
                     >
                         {t.nav.resume}
@@ -115,7 +116,8 @@ const Navbar = () => {
                                 </a>
                             ))}
                             <a
-                                href="/resume.pdf"
+                                href="/resume/CV-Mathias-Videla.pdf"
+                                download="CV_Mathias_Videla.pdf"
                                 className="inline-block text-center px-4 py-2 text-sm font-medium text-background bg-foreground rounded-lg hover:bg-foreground/90 transition-colors"
                             >
                                 {t.nav.downloadResume}

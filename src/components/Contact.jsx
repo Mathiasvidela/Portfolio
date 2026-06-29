@@ -22,7 +22,8 @@ const Contact = () => {
             title: t.contact.cv,
             description: t.contact.cvDesc,
             icon: FileText,
-            href: "/resume.pdf",
+            href: "/resume/CV-Mathias-Videla.pdf",
+            download: "CV_Mathias_Videla.pdf"
         }
     ];
 
@@ -66,7 +67,8 @@ const Contact = () => {
                             <a
                                 key={index}
                                 href={link.href}
-                                target={link.href.startsWith('http') || link.href.endsWith('.pdf') ? "_blank" : undefined}
+                                download={link.download}
+                                target={link.download ? undefined : (link.href.startsWith('http') || link.href.endsWith('.pdf') ? "_blank" : undefined)}
                                 rel="noopener noreferrer"
                                 className="group relative flex-1 flex items-center p-4 lg:p-6 rounded-lg bg-foreground/5 border border-foreground/10 hover:border-[#133df6]/50 hover:bg-foreground/10 backdrop-blur-md transition-all duration-300 overflow-hidden"
                             >

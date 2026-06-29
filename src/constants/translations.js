@@ -23,13 +23,13 @@ export const translations = {
             title: 'Featured Work',
             projects: [
                 {
-                    title: 'Stubify 🚧 (WIP)',
-                    description: 'Application to create personalized digital tickets from important memories, incorporating photos, dates, locations, titles, and descriptions to save or share them.',
+                    title: 'CineMatch',
+                    description: 'Movie recommendation web app based on user preferences. Built with a Spring Boot backend that integrates the TMDB API, featuring user authentication, custom watchlists, and secure MySQL data persistence.',
                     role: 'Full Stack Web App',
-                    tech: ['Java', 'Spring Boot', 'React', 'Vite'],
-                    github: 'https://github.com/Mathiasvidela/stubify',
-                    url: 'https://stubify.app',
-                    image: '/stubify.webp'
+                    tech: ['Java', 'Spring Boot', 'Spring Security', 'MySQL', 'Docker', 'GitHub Actions'],
+                    github: 'https://github.com/Mathiasvidela/CineMatch',
+                    url: 'https://cine-match-project.vercel.app/',
+                    image: '/cine-match.png'
                 },
                 {
                     title: 'User & Product Management API 🚧 (WIP)',
@@ -55,12 +55,12 @@ export const translations = {
                 {
                     school: "ISTEA",
                     degree: "Advanced Technical Diploma in Software Development",
-                    year: "2023 - 2027",
+                    year: "2023 - Present",
                     description: "Focus on software architecture, algorithms, and full-stack development with .NET and JAVA."
                 },
                 {
                     school: "Universidad Siglo 21",
-                    degree: "Diseño y Animación Digital",
+                    degree: "Digital Design and Animation",
                     year: "2021 - 2023",
                     description: "Specialized in UI/UX principles, motion graphics, and visual storytelling."
                 }
@@ -137,20 +137,20 @@ export const translations = {
             title: 'Trabajos Destacados',
             projects: [
                 {
-                    title: 'Stubify 🚧 (WIP)',
-                    description: 'Aplicación para crear tickets digitales personalizados a partir de recuerdos importantes, incorporando foto, fecha, ubicación, título y descripción para guardarlos o compartirlos.',
+                    title: 'CineMatch',
+                    description: 'Aplicación web de recomendación de películas personalizada según las preferencias del usuario. Desarrollada con un backend en Java y Spring Boot que integra la API de TMDB, e incluye autenticación de usuarios, watchlist personalizada y persistencia de datos segura con MySQL.',
                     role: 'App Web Full Stack',
-                    tech: ['Java', 'Spring Boot', 'React', 'Vite'],
-                    github: 'https://github.com/Mathiasvidela/stubify',
-                    url: 'https://stubify.app',
-                    image: '/stubify.webp'
+                    tech: ['Java', 'Spring Boot', 'Spring Security', 'MySQL', 'Docker', 'GitHub Actions'],
+                    github: 'https://github.com/Mathiasvidela/CineMatch',
+                    url: 'https://cine-match-project.vercel.app/',
+                    image: '/cine-match.png'
                 },
                 {
-                    title: 'API de Gestión de Usuarios y Productos 🚧 (WIP)',
+                    title: 'API de Gestión de Usuarios y Productos',
                     description: 'API REST desarrollada con Spring Boot para administrar usuarios, productos y categorías, aplicando arquitectura en capas, operaciones CRUD e integración con MySQL mediante Spring Data JPA.',
                     role: 'Backend Java',
                     tech: ['Java', 'Spring Boot', 'MySQL', 'JPA'],
-                    github: 'https://github.com/Mathiasvidela/User-Product-API',
+                    github: 'https://github.com/Mathiasvidela/API-REST-Gestion',
                     image: '/apirest.webp'
                 },
                 {
@@ -169,7 +169,7 @@ export const translations = {
                 {
                     school: "ISTEA",
                     degree: "Tecnicatura Superior en Desarrollo de Software",
-                    year: "2025 - 2027",
+                    year: "2025 - Actualidad",
                     description: "Enfoque en arquitectura de software, algoritmos y desarrollo full-stack con .NET y Java."
                 },
                 {
