@@ -32,7 +32,7 @@ export const translations = {
                     image: '/cine-match.png'
                 },
                 {
-                    title: 'User & Product Management API 🚧 (WIP)',
+                    title: 'User & Product Management API',
                     description: 'RESTful API developed with Spring Boot to manage users, products, and categories, applying layered architecture, CRUD operations, and MySQL integration via Spring Data JPA.',
                     role: 'Java Backend',
                     tech: ['Java', 'Spring Boot', 'MySQL', 'JPA'],
