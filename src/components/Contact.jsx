@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, Linkedin, FileText, ArrowRight } from 'lucide-react';
+import { Mail, Linkedin, FileText, Github, ArrowUpRight, Download } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const Contact = () => {
@@ -11,19 +11,29 @@ const Contact = () => {
             description: t.contact.emailDesc,
             icon: Mail,
             href: "mailto:mathiasvidela20@gmail.com",
+            actionIcon: ArrowUpRight,
         },
         {
             title: t.contact.linkedin,
             description: t.contact.linkedinDesc,
             icon: Linkedin,
             href: "https://www.linkedin.com/in/mathias-videla/",
+            actionIcon: ArrowUpRight,
+        },
+        {
+            title: t.contact.github,
+            description: t.contact.githubDesc,
+            icon: Github,
+            href: "https://www.github.com/Mathiasvidela",
+            actionIcon: ArrowUpRight,
         },
         {
             title: t.contact.cv,
             description: t.contact.cvDesc,
             icon: FileText,
             href: "/resume/CV-Mathias-Videla.pdf",
-            download: "CV_Mathias_Videla.pdf"
+            download: "CV_Mathias_Videla.pdf",
+            actionIcon: Download,
         }
     ];
 
@@ -60,35 +70,46 @@ const Contact = () => {
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                        className="w-full xl:w-2/3 flex flex-col sm:flex-row gap-4 xl:justify-end xl:mt-16"
+                        transition={{ delay: 0.1 }}
+                        className="w-full xl:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 xl:mt-8"
                     >
-                        {contactLinks.map((link, index) => (
-                            <a
-                                key={index}
-                                href={link.href}
-                                download={link.download}
-                                target={link.download ? undefined : (link.href.startsWith('http') || link.href.endsWith('.pdf') ? "_blank" : undefined)}
-                                rel="noopener noreferrer"
-                                className="group relative flex-1 flex items-center p-4 lg:p-6 rounded-lg bg-foreground/5 border border-foreground/10 hover:border-[#133df6]/50 hover:bg-foreground/10 backdrop-blur-md transition-all duration-300 overflow-hidden"
-                            >
-                                {/* Glow Effect on Hover */}
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[#133df6]/0 group-hover:bg-[#133df6]/10 blur-2xl transition-colors duration-500 rounded-full pointer-events-none" />
+                        {contactLinks.map((link, index) => {
+                            const ActionIcon = link.actionIcon;
+                            return (
+                                <motion.a
+                                    key={index}
+                                    href={link.href}
+                                    download={link.download}
+                                    target={link.download ? undefined : "_blank"}
+                                    rel="noopener noreferrer"
+                                    whileHover={{ y: -6, scale: 1.02 }}
+                                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                    className="group relative flex flex-col justify-between p-6 rounded-xl bg-foreground/[0.03] border border-foreground/10 hover:border-[#133df6]/40 hover:bg-[#133df6]/[0.02] backdrop-blur-md transition-all duration-200 overflow-hidden"
+                                >
+                                    {/* Glow Effect on Hover */}
+                                    <div className="absolute top-0 right-0 w-24 h-24 bg-[#133df6]/5 rounded-full blur-2xl group-hover:bg-[#133df6]/20 transition-all duration-300 pointer-events-none" />
 
-                                <div className="relative z-10 flex items-center w-full gap-4">
-                                    <div className="p-3 bg-background/50 rounded-lg border border-foreground/10 text-[#133df6] flex-shrink-0">
-                                        <link.icon size={20} />
+                                    <div className="flex items-start justify-between mb-8 relative z-10">
+                                        <div className="p-3 bg-background/50 rounded-xl border border-foreground/10 text-[#133df6] transition-all duration-300 group-hover:bg-[#133df6] group-hover:text-white group-hover:border-[#133df6] group-hover:scale-110 flex items-center justify-center">
+                                            <link.icon size={22} />
+                                        </div>
+
+                                        <div className="text-muted-foreground opacity-50 group-hover:opacity-100 group-hover:text-[#133df6] transition-all duration-300 transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+                                            <ActionIcon size={20} />
+                                        </div>
                                     </div>
 
-                                    <div className="flex-1">
-                                        <h3 className="text-foreground font-bold text-sm lg:text-base mb-0.5">{link.title}</h3>
-                                        <p className="text-muted-foreground text-[10px] lg:text-xs font-medium">{link.description}</p>
+                                    <div className="relative z-10">
+                                        <h3 className="text-foreground font-heading font-bold text-lg md:text-xl mb-1.5">
+                                            {link.title}
+                                        </h3>
+                                        <p className="text-muted-foreground text-xs md:text-sm leading-relaxed font-normal">
+                                            {link.description}
+                                        </p>
                                     </div>
-
-                                    <ArrowRight size={18} className="text-muted-foreground opacity-50 group-hover:opacity-100 group-hover:text-[#133df6] group-hover:translate-x-1 transition-all duration-300 flex-shrink-0" />
-                                </div>
-                            </a>
-                        ))}
+                                </motion.a>
+                            );
+                        })}
                     </motion.div>
                 </div>
 

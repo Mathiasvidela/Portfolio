@@ -99,6 +99,8 @@ export const translations = {
             emailDesc: "Write me directly",
             linkedin: "LinkedIn",
             linkedinDesc: "View professional profile",
+            github: "GitHub",
+            githubDesc: "Explore my source code",
             cv: "Resume",
             cvDesc: "Download resume",
             nameLabel: 'Name',
@@ -213,6 +215,8 @@ export const translations = {
             emailDesc: "Escribime directamente",
             linkedin: "LinkedIn",
             linkedinDesc: "Ver perfil profesional",
+            github: "GitHub",
+            githubDesc: "Explora mis repositorios",
             cv: "CV",
             cvDesc: "Descargar currículum"
         },
