@@ -94,7 +94,7 @@ export const translations = {
         contact: {
             title: "Let's Connect",
             description: "I'm open to new software development opportunities. If you want to know more about my profile, you can write to me or check my experience.",
-            availability: "Available for Jr, Trainee or Full-stack positions • Remote / Hybrid • Argentina",
+            availability: "Latinoamérica / Unión Europea",
             email: "Email",
             emailDesc: "Write me directly",
             linkedin: "LinkedIn",
@@ -210,7 +210,7 @@ export const translations = {
         contact: {
             title: "Conectemos",
             description: "Estoy abierto a nuevas oportunidades en desarrollo de software. Si querés conocer más sobre mi perfil, podés escribirme o revisar mi experiencia.",
-            availability: "Disponible para posiciones Jr, Trainee • Remoto / Híbrido • Latinoamérica / Unión Europea",
+            availability: "Latinoamérica / Unión Europea",
             email: "Email",
             emailDesc: "Escribime directamente",
             linkedin: "LinkedIn",

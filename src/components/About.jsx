@@ -31,13 +31,6 @@ const About = () => {
                 ARCHIT
             </div>
 
-            {/* Right vertical text */}
-            <div className="absolute right-[2%] top-1/2 -translate-y-1/2 hidden lg:block pointer-events-none z-0">
-                <div className="transform rotate-180" style={{ writingMode: 'vertical-rl' }}>
-                    <span className="text-[10px] tracking-[0.3em] text-white/50 uppercase">Soluciones que escalan</span>
-                </div>
-            </div>
-
             <div className="container mx-auto px-6 md:px-12 relative z-10 w-full">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
 
