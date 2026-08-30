@@ -1,157 +1,178 @@
+import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
-const getLanguageColor = (techName) => {
-    const colors = {
-        'java': '#b07219',
-        'spring boot': '#6db33f',
-        'spring': '#6db33f',
-        'react': '#61dafb',
-        'vite': '#646cff',
-        'mysql': '#4479a1',
-        'swing': '#f89820',
-        'jpa': '#507e9c',
-        'javascript': '#f1e05a',
-        'js': '#f1e05a',
-        'html': '#e34c26',
-        'css': '#563d7c',
-        'node.js': '#339933',
-        'node': '#339933',
-        'mongodb': '#47a248',
-        'c#': '#178600',
-        'typescript': '#3178c6',
-        'ts': '#3178c6',
-    };
-    const key = techName.toLowerCase().trim();
-    return colors[key] || '#8b949e';
-};
-
-const ProjectCard = ({ project, index }) => {
-    const primaryTech = project.tech[0] || 'Java';
-
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="w-full h-full flex"
-        >
-            <div className="group relative w-full h-full flex flex-col rounded-lg bg-[#0d1117]/85 border border-[#30363d] overflow-hidden backdrop-blur-md hover:border-blue-500/40 hover:shadow-[0_0_20px_rgba(59,130,246,0.12)] transition-all duration-300 p-5 md:p-6">
-
-                {/* Header: Book icon, Title link & Public badge */}
-                <div className="flex items-start justify-between gap-4 mb-2">
-                    <div className="flex items-center gap-2 overflow-hidden">
-                        {/* GitHub Repository Book Icon */}
-                        <svg className="w-4 h-4 text-[#8b949e] shrink-0 mt-0.5" viewBox="0 0 16 16" version="1.1" fill="currentColor">
-                            <path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8z"></path>
-                        </svg>
-                        <a
-                            href={project.github || project.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-[#58a6ff] hover:underline font-semibold text-lg leading-tight transition-all truncate"
-                        >
-                            {project.title.replace(" 🚧 (WIP)", "")}
-                        </a>
-                        {project.title.includes("🚧") && (
-                            <span className="text-[10px] px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-500 border border-amber-500/20 font-medium shrink-0">
-                                WIP
-                            </span>
-                        )}
-                    </div>
-
-                    <span className="px-2 py-0.5 text-[11px] font-medium text-[#8b949e] border border-[#30363d] rounded-full bg-zinc-800/10 shrink-0">
-                        Public
-                    </span>
-                </div>
-
-                {/* Subtitle / Role description */}
-                <div className="text-[#8b949e] text-xs font-mono mb-4 tracking-wide">
-                    {project.role}
-                </div>
-
-                {/* Body: Description */}
-                <p className="text-zinc-400 text-sm mb-4 leading-relaxed line-clamp-3">
-                    {project.description}
-                </p>
-
-                {/* OG Social Preview Image */}
-                {project.image && (
-                    <div className="relative aspect-[16/9] w-full bg-background/50 border border-[#30363d] rounded-md overflow-hidden shrink-0 mb-4 group/img">
-                        <img
-                            src={project.image}
-                            alt={project.title}
-                            className="w-full h-full object-cover opacity-80 group-hover/img:opacity-100 group-hover/img:scale-[1.01] transition-all duration-300"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
-                    </div>
-                )}
-
-                {/* GitHub Topic Tags style */}
-                <div className="flex flex-wrap gap-1.5 mb-5">
-                    {project.tech.map((tech) => (
-                        <span
-                            key={tech}
-                            className="px-2.5 py-0.5 rounded-full bg-[#388bfd]/10 hover:bg-[#388bfd]/20 text-[#58a6ff] text-xs font-medium border border-transparent transition-colors cursor-pointer"
-                        >
-                            {tech}
-                        </span>
-                    ))}
-                </div>
-
-                {/* Sleek Action Buttons */}
-                <div className="flex gap-2.5 w-full border-t border-[#30363d]/60 pt-4 mt-auto">
-                    {project.github && (
-                        <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex-1 flex items-center justify-center gap-1.5 py-2 px-3 bg-[#21262d] border border-[#30363d] text-[#c9d1d9] text-xs font-semibold rounded-md hover:bg-[#30363d] hover:border-[#8b949e] transition-all"
-                        >
-                            <Github size={14} /> Repository
-                        </a>
-                    )}
-                    {project.url && (
-                        <a
-                            href={project.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex-1 flex items-center justify-center gap-1.5 py-2 px-3 bg-[#238636] border border-[#2ea043]/30 text-white text-xs font-semibold rounded-md hover:bg-[#2ea043] transition-all"
-                        >
-                            <ExternalLink size={14} /> Live Demo
-                        </a>
-                    )}
-                </div>
-            </div>
-        </motion.div>
-    );
-};
+const wrapIndex = (index, length) => (index + length) % length;
 
 const Experience = () => {
     const { t } = useLanguage();
+    const projects = t.experience.projects.slice(0, 3);
+    const [activeIndex, setActiveIndex] = useState(0);
+    const wheelLocked = useRef(false);
 
-    // Limit to 3 projects
-    const displayedProjects = t.experience.projects.slice(0, 3);
+    const move = (direction) => {
+        setActiveIndex((current) => wrapIndex(current + direction, projects.length));
+    };
+
+    const getPosition = (index) => {
+        let difference = index - activeIndex;
+        if (difference > projects.length / 2) difference -= projects.length;
+        if (difference < -projects.length / 2) difference += projects.length;
+
+        if (difference === 0) {
+            return { x: '-50%', y: 0, rotate: 0, scale: 1, opacity: 1, zIndex: 30 };
+        }
+
+        const isRight = difference > 0;
+        return {
+            x: isRight ? '48%' : '-148%',
+            y: 36,
+            rotate: isRight ? 13 : -13,
+            scale: 0.88,
+            opacity: 0.78,
+            zIndex: 20,
+        };
+    };
+
+    const handleWheel = (event) => {
+        if (wheelLocked.current || Math.abs(event.deltaX) < 14) return;
+
+        wheelLocked.current = true;
+        move(event.deltaX > 0 ? 1 : -1);
+        window.setTimeout(() => {
+            wheelLocked.current = false;
+        }, 650);
+    };
+
+    const handleKeyDown = (event) => {
+        if (event.key === 'ArrowRight') move(1);
+        if (event.key === 'ArrowLeft') move(-1);
+    };
+
+    const handleDragEnd = (_, info) => {
+        if (info.offset.x < -70 || info.velocity.x < -500) move(1);
+        if (info.offset.x > 70 || info.velocity.x > 500) move(-1);
+    };
 
     return (
-        <section id="projects" className="py-24 bg-background overflow-hidden">
-            <div className="container mx-auto px-6 md:px-12 max-w-7xl">
+        <section id="projects" className="relative overflow-hidden bg-[#080b16] py-20 text-white md:py-28">
+            <div
+                className="pointer-events-none absolute inset-0 opacity-25"
+                aria-hidden="true"
+                style={{
+                    backgroundImage: 'radial-gradient(rgba(19,61,246,.55) 1px, transparent 1px)',
+                    backgroundSize: '30px 30px',
+                    maskImage: 'radial-gradient(ellipse at center, black 20%, transparent 80%)',
+                }}
+            />
+
+            <div className="relative z-10 mx-auto max-w-[1600px] px-5 text-center md:px-12">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-16 text-center"
+                    className="font-heading text-5xl font-black uppercase leading-none tracking-[-0.045em] sm:text-6xl lg:text-8xl"
                 >
                     {t.experience.title}
                 </motion.h2>
+                <p className="mx-auto mt-4 max-w-xl text-sm text-white/60 sm:text-base md:text-lg">
+                    {t.experience.subtitle}
+                </p>
+            </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {displayedProjects.map((project, index) => (
-                        <ProjectCard key={index} project={project} index={index} />
-                    ))}
+            <div
+                className="relative mx-auto mt-14 h-[480px] w-full max-w-[1700px] outline-none sm:h-[590px] lg:mt-16 lg:h-[640px]"
+                role="region"
+                aria-roledescription="carousel"
+                aria-label={t.experience.carouselLabel}
+                tabIndex={0}
+                onKeyDown={handleKeyDown}
+                onWheel={handleWheel}
+            >
+                <motion.div
+                    className="absolute inset-0 cursor-grab active:cursor-grabbing"
+                    drag="x"
+                    dragConstraints={{ left: 0, right: 0 }}
+                    dragElastic={0.12}
+                    onDragEnd={handleDragEnd}
+                >
+                    {projects.map((project, index) => {
+                        const position = getPosition(index);
+                        const isActive = index === activeIndex;
+                        const projectUrl = project.url || project.github;
+
+                        return (
+                            <motion.a
+                                key={project.title}
+                                href={projectUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                animate={position}
+                                transition={{ type: 'spring', stiffness: 115, damping: 18, mass: 0.8 }}
+                                className="group absolute left-1/2 top-0 block aspect-square w-[min(72vw,500px)] overflow-hidden rounded-xl border border-white/10 bg-[#111525] shadow-[0_30px_90px_rgba(0,0,0,.5)] sm:w-[min(60vw,540px)]"
+                                style={{ transformOrigin: '50% 115%' }}
+                                aria-label={`${project.title}. ${isActive ? t.experience.openProject : t.experience.selectProject}`}
+                                aria-current={isActive ? 'true' : undefined}
+                                onClick={(event) => {
+                                    if (!isActive) {
+                                        event.preventDefault();
+                                        setActiveIndex(index);
+                                    }
+                                }}
+                            >
+                                <img
+                                    src={project.image}
+                                    alt=""
+                                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.025]"
+                                    draggable="false"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
+                                <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 text-left sm:p-7">
+                                    <div>
+                                        <p className="mb-2 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-white/65 sm:text-xs">
+                                            {project.role}
+                                        </p>
+                                        <h3 className="font-heading text-3xl font-black uppercase leading-none tracking-[-0.035em] sm:text-5xl">
+                                            {project.title}
+                                        </h3>
+                                    </div>
+                                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#133df6] text-white sm:h-14 sm:w-14">
+                                        <ArrowUpRight size={24} />
+                                    </span>
+                                </div>
+                            </motion.a>
+                        );
+                    })}
+                </motion.div>
+
+                <div className="absolute bottom-3 left-1/2 z-40 -translate-x-1/2 text-center sm:bottom-1">
+                    <a
+                        href={projects[activeIndex].url || projects[activeIndex].github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-full bg-[#133df6] px-6 py-3 font-heading text-sm font-black uppercase tracking-wide text-white transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                    >
+                        {projects[activeIndex].title}
+                        <ArrowUpRight size={16} />
+                    </a>
+                    <p className="mt-4 whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.18em] text-white/45 sm:text-xs">
+                        {t.experience.dragHint}
+                    </p>
                 </div>
+            </div>
+
+            <div className="relative z-20 mt-4 flex justify-center gap-2" aria-label={t.experience.projectNavigation}>
+                {projects.map((project, index) => (
+                    <button
+                        key={project.title}
+                        type="button"
+                        onClick={() => setActiveIndex(index)}
+                        className={`h-1.5 rounded-full transition-all ${index === activeIndex ? 'w-10 bg-[#133df6]' : 'w-4 bg-white/20 hover:bg-white/40'}`}
+                        aria-label={`${t.experience.showProject} ${project.title}`}
+                        aria-current={index === activeIndex ? 'true' : undefined}
+                    />
+                ))}
             </div>
         </section>
     );

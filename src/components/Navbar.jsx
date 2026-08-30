@@ -48,7 +48,7 @@ const Navbar = () => {
                         <a
                             key={link.name}
                             href={link.href}
-                            className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200"
+                            className="text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-primary"
                         >
                             {link.name}
                         </a>
@@ -58,7 +58,7 @@ const Navbar = () => {
                         <button
                             onClick={toggleLanguage}
                             aria-label="Toggle language"
-                            className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-full hover:bg-foreground/5"
+                            className="flex items-center gap-2 rounded-full px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-foreground/5 hover:text-primary"
                         >
                             <Globe size={18} />
                             <span className="uppercase">{language}</span>
@@ -68,7 +68,7 @@ const Navbar = () => {
                     <a
                         href="/resume/CV-Mathias-Videla.pdf"
                         download="CV_Mathias_Videla.pdf"
-                        className="px-4 py-2 text-sm font-medium text-background bg-foreground rounded-lg hover:bg-foreground/90 transition-colors"
+                        className={cn('rounded-lg px-4 py-2 text-sm font-medium transition-colors', isScrolled ? 'bg-foreground text-background hover:bg-foreground/90' : 'border border-white/55 text-white hover:bg-white hover:text-[#080b16]')}
                     >
                         {t.nav.resume}
                     </a>
@@ -79,7 +79,7 @@ const Navbar = () => {
                     <button
                         onClick={toggleLanguage}
                         aria-label="Toggle language"
-                        className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                        className="flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
                     >
                         <span className="uppercase">{language}</span>
                     </button>

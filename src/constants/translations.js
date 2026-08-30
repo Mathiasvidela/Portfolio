@@ -9,18 +9,39 @@ export const translations = {
             downloadResume: 'Download Resume'
         },
         hero: {
-            LetsBuild: "Let's Connect"
+            LetsBuild: "Let's Connect",
+            iAm: "I'm a",
+            identity: "Mathias Videla · Argentina",
+            role: "Backend Developer · Java · Spring Boot",
+            viewProjects: "View projects",
+            availability: "Available for new opportunities",
+            technologyLine: "APIs · Architecture · Databases · React",
+            portraitAlt: "Portrait of Mathias Videla"
         },
         about: {
             titlePart1: 'Building the future',
             titlePart2: 'with Code and Architecture.',
-            description: 'My focus is on backend development with Java and Spring Boot, working on APIs, data persistence, business logic, and application architecture. I aim to write clean code, apply best practices, and build systems that are easy to maintain and scale.',
+            description: 'As a backend developer, I enjoy turning ideas into digital products that solve real problems. I care about understanding each project, contributing solutions, and taking part in its development from the initial idea through to the final result.',
+            imageAlt: 'Code key',
         },
         tech: {
-            title: 'My Tech Stack'
+            title: 'My Tech Stack',
+            titleLine1: 'My Tech',
+            titleLine2: 'Stack',
+            physicsTagline: 'Different pieces. One system. Drag, throw and explore the tools I use to build software.',
+            physicsLabel: 'Interactive technology playground with physics',
+            dragLabel: 'Drag or throw this technology',
+            staticListLabel: 'Complete technology list'
         },
         experience: {
-            title: 'Featured Work',
+            title: 'Featured Projects',
+            subtitle: 'A selection of projects built to solve real-world problems.',
+            carouselLabel: 'Featured projects carousel',
+            openProject: 'Open project',
+            selectProject: 'Select project',
+            dragHint: 'Drag or scroll horizontally to explore',
+            projectNavigation: 'Project navigation',
+            showProject: 'Show project',
             projects: [
                 {
                     title: 'CineMatch',
@@ -93,7 +114,12 @@ export const translations = {
         },
         contact: {
             title: "Let's Connect",
-            description: "I'm open to new software development opportunities. If you want to know more about my profile, you can write to me or check my experience.",
+            titleLine1: "Let's",
+            titleLine2: "Connect.",
+            roleLine: "Software Developer · Backend Developer",
+            description: "I'm open to new software development opportunities.",
+            writeMe: "Get in touch",
+            downloadCv: "Download Resume",
             availability: "Latinoamérica / Unión Europea",
             email: "Email",
             emailDesc: "Write me directly",
@@ -125,18 +151,39 @@ export const translations = {
             downloadResume: 'Descargar CV'
         },
         hero: {
-            LetsBuild: "Conectemos"
+            LetsBuild: "Conectemos",
+            iAm: "Soy",
+            identity: "Mathias Videla · Argentina",
+            role: "Backend Developer · Java · Spring Boot",
+            viewProjects: "Ver proyectos",
+            availability: "Disponible para nuevas oportunidades",
+            technologyLine: "APIs · Arquitectura · Bases de datos · React",
+            portraitAlt: "Retrato de Mathias Videla"
         },
         about: {
             titlePart1: 'Construyendo el futuro',
             titlePart2: 'con Código y Arquitectura.',
-            description: 'Mi enfoque está en el desarrollo backend con Java y Spring Boot, trabajando sobre APIs, persistencia de datos, lógica de negocio y arquitectura de aplicaciones. Busco escribir código claro, aplicar buenas prácticas y construir sistemas que sean fáciles de mantener y escalar.',
+            description: 'Como desarrollador backend, me gusta transformar ideas en productos digitales que resuelvan problemas reales. Me interesa comprender cada proyecto, aportar soluciones y participar en su desarrollo desde la idea inicial hasta el resultado final.',
+            imageAlt: 'Tecla de código',
         },
         tech: {
-            title: 'Mi Stack Tecnológico'
+            title: 'Mi Stack Tecnológico',
+            titleLine1: 'Mi Stack',
+            titleLine2: 'Tecnológico',
+            physicsTagline: 'Piezas distintas. Un mismo sistema. Arrastrá, lanzá y explorá las herramientas con las que construyo software.',
+            physicsLabel: 'Zona interactiva de tecnologías con física',
+            dragLabel: 'Arrastrá o lanzá esta tecnología',
+            staticListLabel: 'Lista completa de tecnologías'
         },
         experience: {
-            title: 'Trabajos Destacados',
+            title: 'Proyectos Destacados',
+            subtitle: 'Una selección de proyectos desarrollados para resolver problemas reales.',
+            carouselLabel: 'Carrusel de proyectos destacados',
+            openProject: 'Abrir proyecto',
+            selectProject: 'Seleccionar proyecto',
+            dragHint: 'Arrastrá o desplazate horizontalmente para explorar',
+            projectNavigation: 'Navegación de proyectos',
+            showProject: 'Mostrar proyecto',
             projects: [
                 {
                     title: 'CineMatch',
@@ -209,7 +256,12 @@ export const translations = {
         },
         contact: {
             title: "Conectemos",
-            description: "Estoy abierto a nuevas oportunidades en desarrollo de software. Si querés conocer más sobre mi perfil, podés escribirme o revisar mi experiencia.",
+            titleLine1: "Conec",
+            titleLine2: "temos.",
+            roleLine: "Software Developer · Backend Developer",
+            description: "Estoy abierto a nuevas oportunidades en desarrollo de software.",
+            writeMe: "Escribime",
+            downloadCv: "Descargar CV",
             availability: "Latinoamérica / Unión Europea",
             email: "Email",
             emailDesc: "Escribime directamente",
