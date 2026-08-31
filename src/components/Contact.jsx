@@ -26,7 +26,7 @@ const Contact = () => {
     return (
         <section id="contact" className="relative overflow-hidden bg-[#080b16] text-white">
             <div className="grid min-h-[760px] lg:grid-cols-[56%_44%]">
-                <div className="relative flex min-h-[570px] flex-col justify-between overflow-hidden bg-[#080b16] px-6 py-14 sm:px-10 md:px-14 lg:min-h-[760px] lg:px-[7vw] lg:py-20">
+                <div className="relative flex min-h-[400px] flex-col justify-center overflow-hidden bg-[#080b16] px-6 py-10 sm:min-h-[460px] sm:px-10 md:px-14 lg:min-h-[760px] lg:justify-between lg:px-[7vw] lg:py-20">
                     <div
                         className="pointer-events-none absolute inset-0 opacity-25"
                         aria-hidden="true"
@@ -42,12 +42,12 @@ const Contact = () => {
                         <span className="absolute left-1/2 top-1/2 h-9 w-9 -translate-x-1/2 -translate-y-1/2 rounded-full border border-current" />
                     </div>
 
-                    <h2 aria-label={t.contact.title} className="relative z-10 mt-auto font-heading text-[clamp(5rem,13vw,13rem)] font-black uppercase leading-[0.72] tracking-[-0.075em]">
+                    <h2 aria-label={t.contact.title} className="relative z-10 font-heading text-[clamp(5rem,13vw,13rem)] font-black uppercase leading-[0.72] tracking-[-0.075em] lg:mt-auto">
                         <span className="block">{t.contact.titleLine1}</span>
                         <span className="block">{t.contact.titleLine2}</span>
                     </h2>
 
-                    <p className="relative z-10 mt-10 font-mono text-xs font-medium tracking-wide text-white/90 sm:text-sm md:text-base">
+                    <p className="relative z-10 mt-7 font-mono text-xs font-medium tracking-wide text-white/90 sm:text-sm md:text-base lg:mt-10">
                         {t.contact.roleLine}
                     </p>
                 </div>
