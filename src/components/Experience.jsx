@@ -72,7 +72,7 @@ const Experience = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="font-heading text-5xl font-black uppercase leading-none tracking-[-0.045em] sm:text-6xl lg:text-8xl"
+                    className="font-heading text-[clamp(2.5rem,11.5vw,3rem)] font-black uppercase leading-none tracking-[-0.045em] sm:text-6xl lg:text-8xl"
                 >
                     {t.experience.title}
                 </motion.h2>
@@ -156,9 +156,6 @@ const Experience = () => {
                         {projects[activeIndex].title}
                         <ArrowUpRight size={16} />
                     </a>
-                    <p className="mt-4 whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.18em] text-white/45 sm:text-xs">
-                        {t.experience.dragHint}
-                    </p>
                 </div>
             </div>
 

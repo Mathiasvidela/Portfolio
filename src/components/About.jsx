@@ -34,7 +34,7 @@ const About = () => {
                     </motion.div>
 
                     <motion.div initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.65 }}>
-                        <h2 className="font-heading text-5xl font-black uppercase leading-[0.9] tracking-[-0.05em] sm:text-6xl xl:text-7xl">
+                        <h2 className="font-heading text-[clamp(2.1rem,11.5vw,3rem)] font-black uppercase leading-[0.9] tracking-[-0.05em] sm:text-6xl xl:text-7xl">
                             {t.about.titlePart1}
                         </h2>
                         <p className="mt-2 font-serif text-3xl italic leading-tight sm:text-4xl xl:text-5xl">

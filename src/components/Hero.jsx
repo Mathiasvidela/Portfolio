@@ -24,7 +24,7 @@ const Hero = () => {
                         <motion.span initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="relative z-10 mr-[60%] inline-block font-serif text-3xl italic text-[#133df6] sm:text-5xl lg:text-6xl">
                             {t.hero.iAm}
                         </motion.span>
-                        <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, ease: 'easeOut' }} className="mt-1 font-heading text-[clamp(5.1rem,14.2vw,14.5rem)] font-black uppercase leading-[0.72] tracking-[-0.075em] text-[#133df6]">
+                        <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, ease: 'easeOut' }} className="mt-1 font-heading text-[clamp(3.5rem,14.2vw,14.5rem)] font-black uppercase leading-[0.72] tracking-[-0.075em] text-[#133df6]">
                             <span className="block">Software</span>
                             <span className="block">Developer</span>
                         </motion.h1>

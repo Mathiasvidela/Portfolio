@@ -218,7 +218,7 @@ const TechStack = () => {
 
             <div className="relative mx-auto max-w-[1500px] px-5 pb-8 pt-16 md:px-12 md:pt-24">
                 <div className="mb-8 text-center md:mb-10">
-                    <h2 aria-label={t.tech.title} className="font-heading text-5xl font-black uppercase leading-[0.88] tracking-[-0.05em] sm:text-7xl lg:text-8xl">
+                    <h2 aria-label={t.tech.title} className="font-heading text-[clamp(2.45rem,11.5vw,3rem)] font-black uppercase leading-[0.88] tracking-[-0.05em] sm:text-7xl lg:text-8xl">
                         <span className="block">{t.tech.titleLine1}</span>
                         <span className="block">{t.tech.titleLine2}</span>
                     </h2>
@@ -240,7 +240,7 @@ const TechStack = () => {
                 ) : (
                     <div
                         ref={stageRef}
-                        className="relative h-[460px] touch-none overflow-hidden border-b-2 border-black sm:h-[520px] lg:h-[570px]"
+                        className="relative h-[460px] touch-pan-y overflow-hidden border-b-2 border-black sm:h-[520px] lg:h-[570px]"
                         aria-label={t.tech.physicsLabel}
                     >
                         {pieces.map((piece) => {

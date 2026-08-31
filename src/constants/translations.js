@@ -39,7 +39,6 @@ export const translations = {
             carouselLabel: 'Featured projects carousel',
             openProject: 'Open project',
             selectProject: 'Select project',
-            dragHint: 'Drag or scroll horizontally to explore',
             projectNavigation: 'Project navigation',
             showProject: 'Show project',
             projects: [
@@ -181,7 +180,6 @@ export const translations = {
             carouselLabel: 'Carrusel de proyectos destacados',
             openProject: 'Abrir proyecto',
             selectProject: 'Seleccionar proyecto',
-            dragHint: 'Arrastrá o desplazate horizontalmente para explorar',
             projectNavigation: 'Navegación de proyectos',
             showProject: 'Mostrar proyecto',
             projects: [

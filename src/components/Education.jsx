@@ -41,7 +41,7 @@ const Education = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-center font-heading text-5xl font-black uppercase leading-none tracking-[-0.045em] text-white sm:text-6xl lg:text-8xl"
+                        className="text-center font-heading text-[clamp(2.5rem,11.5vw,3rem)] font-black uppercase leading-none tracking-[-0.045em] text-white sm:text-6xl lg:text-8xl"
                     >
                         {t.education.title}
                     </motion.h2>
@@ -94,7 +94,7 @@ const Education = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mb-12 text-center font-heading text-4xl font-black uppercase leading-none tracking-[-0.045em] text-white sm:text-5xl lg:text-6xl"
+                    className="mb-12 text-center font-heading text-[clamp(2rem,9vw,2.5rem)] font-black uppercase leading-none tracking-[-0.045em] text-white sm:text-5xl lg:text-6xl"
                 >
                     {t.education.courses.title}
                 </motion.h3>
