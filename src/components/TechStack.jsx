@@ -218,7 +218,7 @@ const TechStack = () => {
 
             <div className="relative mx-auto max-w-[1500px] px-5 pb-8 pt-16 md:px-12 md:pt-24">
                 <div className="mb-8 text-center md:mb-10">
-                    <h2 aria-label={t.tech.title} className="font-heading text-[clamp(2.45rem,11.5vw,3rem)] font-black uppercase leading-[0.88] tracking-[-0.05em] sm:text-7xl lg:text-8xl">
+                    <h2 data-reveal aria-label={t.tech.title} className="font-heading text-[clamp(2.45rem,11.5vw,3rem)] font-black uppercase leading-[0.88] tracking-[-0.05em] sm:text-7xl lg:text-8xl">
                         <span className="block">{t.tech.titleLine1}</span>
                         <span className="block">{t.tech.titleLine2}</span>
                     </h2>

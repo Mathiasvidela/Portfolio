@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { GraduationCap, Award, Calendar } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -28,7 +27,7 @@ const Education = () => {
             </div>
 
             {/* Background Outlined Text */}
-            <div className="absolute right-[-2%] top-[10%] md:top-[15%] text-[20vw] md:text-[16vw] font-black text-transparent whitespace-nowrap leading-[0.85] opacity-20 pointer-events-none z-0 text-right" style={{ WebkitTextStroke: '1px rgba(255,255,255,0.8)' }}>
+            <div data-parallax="-50" className="absolute right-[-2%] top-[10%] md:top-[15%] text-[20vw] md:text-[16vw] font-black text-transparent whitespace-nowrap leading-[0.85] opacity-20 pointer-events-none z-0 text-right" style={{ WebkitTextStroke: '1px rgba(255,255,255,0.8)' }}>
                 LEARN<br />
                 ING
             </div>
@@ -37,25 +36,18 @@ const Education = () => {
                 {/* Education Section */}
                 <div className="flex flex-col items-center justify-center mb-16">
 
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                    <h2 data-reveal
                         className="text-center font-heading text-[clamp(2.5rem,11.5vw,3rem)] font-black uppercase leading-none tracking-[-0.045em] text-white sm:text-6xl lg:text-8xl"
                     >
                         {t.education.title}
-                    </motion.h2>
+                    </h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full justify-between mb-20">
+                <div data-reveal-group className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full justify-between mb-20">
                     {t.education.items.map((edu, index) => (
-                        <motion.div
+                        <div
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
-                            className="relative flex items-stretch bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 w-full"
+                            className="relative flex items-stretch bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 w-full"
                         >
                             {/* Left colored bar */}
                             <div className="w-16 md:w-24 shrink-0 bg-[#0e2db5] relative overflow-hidden">
@@ -85,29 +77,22 @@ const Education = () => {
                                     </p>
                                 )}
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
 
                 {/* Courses Section */}
-                <motion.h3
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                <h3 data-reveal
                     className="mb-12 text-center font-heading text-[clamp(2rem,9vw,2.5rem)] font-black uppercase leading-none tracking-[-0.045em] text-white sm:text-5xl lg:text-6xl"
                 >
                     {t.education.courses.title}
-                </motion.h3>
+                </h3>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full mx-auto">
+                <div data-reveal-group className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full mx-auto">
                     {t.education.courses.items.map((course, index) => (
-                        <motion.div
+                        <div
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.4, delay: index * 0.1 }}
-                            className="relative flex items-stretch bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 w-full min-h-[120px]"
+                            className="relative flex items-stretch bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 w-full min-h-[120px]"
                         >
                             {/* Left colored bar */}
                             <div className="w-8 md:w-10 shrink-0 bg-[#0e2db5] relative overflow-hidden">
@@ -130,7 +115,7 @@ const Education = () => {
                                     <span>{course.year}</span>
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>
